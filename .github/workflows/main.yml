@@ -3,14 +3,14 @@ name: Oppdater Solgraf
 on:
   schedule:
     - cron: '0 3 * * *' # Kjører kl 03:00 UTC hver dag
-  workflow_dispatch: # Lar deg kjøre den manuelt ved behov
+  workflow_dispatch: # Lar deg kjøre den manuelt
 
 permissions:
   contents: write
 
 jobs:
   build:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest  # <-- Her var feilen, nå er det rettet til bindestrek
 
     steps:
     - name: Checkout code
